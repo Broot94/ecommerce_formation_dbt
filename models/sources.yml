@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    description: "Données brutes chargées dans DuckDB"
+    database: dev
+    schema: main
+    tables:
+      - name: raw_customers
+        description: "Données clients"
+        columns:
+          - name: customers_id
+            tests:
+              - unique
+              - not_null
+
+      - name: raw_orders
+        description: "Données commandes"
+        columns:
+          - name: orders_id
+            tests:
+              - unique
+              - not_null
+
+      - name: raw_products
+        description: "Référentiel produits"
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
+      
+      - name: raw_order_items
+        description: "Détails des lignes de commandes"
+        columns:
+          - name: order_item_id
+            tests:
+              - unique
+              - not_null

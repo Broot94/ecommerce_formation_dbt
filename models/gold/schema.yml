@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: 'Table de faits regroupant toutes les transactions.'
+    columns:
+      - name: order_id
+        description: 'Clé primaire de la commande.'
+        tests:
+          - unique
+          - not_null
+
+      - name: orders_id
+        tests:
+          - unique
+          - not_null
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['completed','cancelled', 'refunded', 'pending']
+
+      - name: customer_id
+        description: 'Clé étrangère vers la dimension client.'
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_customers')
+              field: customer_id
