@@ -17,6 +17,7 @@ items as (
 select
     o.order_id,
     o.order_date,
+    o.status,
     c.customer_id,
     c.first_name,
     c.last_name,

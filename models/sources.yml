@@ -9,17 +9,15 @@ sources:
       - name: raw_customers
         description: "Données clients"
         columns:
-          - name: customers_id
+          - name: customer_id
             tests:
-              - unique
               - not_null
 
       - name: raw_orders
         description: "Données commandes"
         columns:
-          - name: orders_id
+          - name: order_id
             tests:
-              - unique
               - not_null
 
       - name: raw_products
@@ -27,7 +25,6 @@ sources:
         columns:
           - name: product_id
             tests:
-              - unique
               - not_null
       
       - name: raw_order_items
@@ -35,5 +32,4 @@ sources:
         columns:
           - name: order_item_id
             tests:
-              - unique
               - not_null

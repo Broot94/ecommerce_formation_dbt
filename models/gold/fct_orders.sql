@@ -2,6 +2,7 @@
 select
     order_id,
     order_date,
+    status,
     customer_id,
     first_name,
     last_name,
